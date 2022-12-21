@@ -22,7 +22,7 @@ const Nav = () => {
     
     <div className='flex justify-center items-center'>
     <Link to={'/'} ><img className='w-12' src={require('./../../../assets/images/100x100.jpg')} alt="" /></Link>
-    <Link to={'/'} className=" normal-case text-xl font-semibold text-lime-800 w-52 lg:text-3xl">Origin Hospital</Link></div>
+    <Link to={'/'} className=" normal-case text-xl lg:text-2xl font-bold text-lime-800 w-52 lg:text-3xl">Origin Hospital</Link></div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 font-semibold text-lg">
@@ -34,7 +34,7 @@ const Nav = () => {
     </ul>
   </div>
   <div className=" navbar-end ">
-    <a href='tel:01861664711' className=" btn btn-outline lg:btn-wide btn-success">Call us</a>
+    <a href='tel:01861664711' className=" btn btn-outline lg:btn-wide btn-error font-bold">Call us</a>
   </div>
 </div>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarCheck, faCircleInfo, faCoffee, faHandHoldingMedical, faImage } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarCheck, faCircleInfo, faCoffee, faFaceAngry, faHandHoldingMedical, faImage } from '@fortawesome/free-solid-svg-icons'
 import 'animate.css';
 import { Link } from 'react-router-dom';
 
@@ -11,14 +11,15 @@ const Home = () => {
     return (
 
         <>
-            <section style={{backgroundColor: "#60ffaa",
-backgroundImage: 'linear-gradient(223deg, #60ffaa 40%, #FFFB7D 100%)'
+            <section style={{
+                backgroundColor: "#60ffaa",
+                backgroundImage: 'linear-gradient(223deg, #60ffaa 40%, #FFFB7D 100%)'
 
 
-}} className='
+            }} className='
             p-5 
             lg:p-10
-            md:p-10   items-center text-green-900'>
+            md:p-10   items-center text-green-1000'>
                 <div className='lg:flex justify-center items-center '>
                     <div className='lg:w-1/2 m-2'>
                         <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
@@ -70,7 +71,7 @@ backgroundImage: 'linear-gradient(223deg, #60ffaa 40%, #FFFB7D 100%)'
             </section>
 
             <section >
-                <div  className='
+                <div className='
             grid lg:grid-cols-4 
              md:grid-cols-2 
             grid-cols-2
@@ -104,7 +105,7 @@ backgroundImage: 'linear-gradient(223deg, #60ffaa 40%, #FFFB7D 100%)'
                                     icon={faCalendarCheck} size="2x" />
                             </div>
 
-                            <h1>Online appointment</h1>
+                            <h1>Book appointment online</h1>
                         </div>
 
 
@@ -137,8 +138,8 @@ backgroundImage: 'linear-gradient(223deg, #60ffaa 40%, #FFFB7D 100%)'
 
                             <h1>Our Services</h1>
                         </div>
-                        </div>
-                        
+                    </div>
+
                     <div className='
                      h-64 bg-green-100 
                      font-bold
@@ -222,40 +223,41 @@ backgroundImage: 'linear-gradient(223deg, #60ffaa 40%, #FFFB7D 100%)'
                 </div>
             </section>
 
-            <section style={{backgroundColor: "#85FFBD",
-backgroundImage: 'linear-gradient(45deg, #85FFBD 0%, #fcff7d 100%)'
-}} className='flex
+            <section style={{
+                backgroundColor: "#85FFBD",
+                backgroundImage: 'linear-gradient(45deg, #85FFBD 0%, #fcff7d 100%)'
+            }} className='flex
             sm:flex-row-reverse
             md:flex-row-reverse p-10 '>
-            <div className='grid 
+                <div className='grid 
             lg:grid-cols-2 
             md:grid-cols-1 
             sm:grid-cols-1 
             gap-3'>
-    <div className='
+                    <div className='
     w-80
     flex
     mx-auto
     lg:justify-end
     drop-shadow-lg' id="surrounding">
-    <Carousel 
-    plugins={[
-        'infinite',
-       {
-         resolve: autoplayPlugin,
-         options: {
-           interval: 2000,
-         }
-       },
-     ]}   
-     animationSpeed={1000}
-    >
-        <img src={require('./../../../assets/images/b1.jpg')} />
-        <img src={require('./../../../assets/images/b2.jpg')} />
-        <img src={require('./../../../assets/images/b3.jpg')} />
-    </Carousel>
-    </div>
-    <div style={{ fontFamily: 'Roboto Mono, monospaced' }} className='my-auto '>
+                        <Carousel
+                            plugins={[
+                                'infinite',
+                                {
+                                    resolve: autoplayPlugin,
+                                    options: {
+                                        interval: 2000,
+                                    }
+                                },
+                            ]}
+                            animationSpeed={1000}
+                        >
+                            <img src={require('./../../../assets/images/b1.jpg')} />
+                            <img src={require('./../../../assets/images/b2.jpg')} />
+                            <img src={require('./../../../assets/images/b3.jpg')} />
+                        </Carousel>
+                    </div>
+                    <div style={{ fontFamily: 'Roboto Mono, monospaced' }} className='my-auto '>
                         <h1 className='
                         text-2xl
                         md:text-3xl
@@ -267,8 +269,8 @@ backgroundImage: 'linear-gradient(45deg, #85FFBD 0%, #fcff7d 100%)'
                          lg:text-start
                          
                          
-                         text-green-900'>Helping Communities Near and Far</h1>
-        <h1 className='
+                         text-green-1000'>Helping Communities Near and Far</h1>
+                        <h1 className='
         text-baseline 
         md:text-2xl 
         text-green-900
@@ -279,14 +281,53 @@ backgroundImage: 'linear-gradient(45deg, #85FFBD 0%, #fcff7d 100%)'
         
         
         '>Our commitment expands beyond our doors to patients in our communities. Take a look at our events and contributions.</h1>
-    </div>
-</div>
+                    </div>
+                </div>
             </section>
 
-            <section style={{
-            backgroundColor: "#85FFBD;",
-            backgroundImage: 'linear-gradient(45deg, #85FFBD 0%, #fcff7d 100%);'
-}}>
+            <section className='my-2'>
+                <div >
+                    <div className='flex justify-center align-middle'>
+                        <img className='w-12' src={require('./../../../assets/images/100x100.jpg')}/>
+                        <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
+                            className='
+                            text-4xl
+                            font-extrabold
+                            text-center
+                            '>Origin Hospital</h1>
+                    </div>
+                    <div>
+                        <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
+                            className='
+                            text-4xl
+                            font-lg
+                            text-center
+                            '>Call: 01832466730 </h1>
+                        <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
+                            className='
+                            text-xl
+                            font-lg
+                            text-center
+                            '>S. Alam Plaza, South Station, Courtbazar, Cox's Bazar.</h1>
+                            <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
+                            className='
+                            text-xl
+                            font-lg
+                            text-center
+                            '>© All Right Reserved by Origin Hospital. </h1>
+                    </div>
+                    
+
+
+
+                </div>
+                <div>
+
+
+
+                </div>
+
+
 
 
             </section>
