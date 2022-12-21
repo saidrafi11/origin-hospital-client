@@ -70,7 +70,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section >
+            <section style={{ fontFamily: 'Roboto Mono, monospaced' }}>
                 <div className='
             grid lg:grid-cols-4 
              md:grid-cols-2 
@@ -287,31 +287,40 @@ const Home = () => {
 
             <section className='my-2'>
                 <div >
-                    <div className='flex justify-center align-middle'>
+                    <div className='flex justify-center items-center'>
                         <img className='w-12' src={require('./../../../assets/images/100x100.jpg')}/>
                         <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
                             className='
-                            text-4xl
+                            text-xl
+                            md:text-4xl
+                            lg:text-4xl
                             font-extrabold
                             text-center
+                            
                             '>Origin Hospital</h1>
                     </div>
                     <div>
                         <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
                             className='
-                            text-4xl
+                            text-xl
+                            md:text-4xl
+                            lg:text-4xl
                             font-lg
                             text-center
                             '>Call: 01832466730 </h1>
                         <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
                             className='
-                            text-xl
+                            text-baseline
+                            md:text-xl
+                            lg:text-xl
                             font-lg
                             text-center
                             '>S. Alam Plaza, South Station, Courtbazar, Cox's Bazar.</h1>
                             <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
                             className='
-                            text-xl
+                            text-baseline
+                            md:text-xl
+                            lg:text-xl
                             font-lg
                             text-center
                             '>© All Right Reserved by Origin Hospital. </h1>
