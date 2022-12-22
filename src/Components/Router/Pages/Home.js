@@ -14,6 +14,7 @@ const Home = () => {
             <section style={{
                 backgroundColor: "#60ffaa",
                 backgroundImage: 'linear-gradient(223deg, #60ffaa 40%, #FFFB7D 100%)'
+               
 
 
             }} className='
@@ -301,7 +302,11 @@ const Home = () => {
             sm:grid-cols-1 
             gap-3
             '>
-                <div style={{ fontFamily: 'Roboto Mono, monospaced' }} className='my-auto '>
+                
+                <div style={{ fontFamily: 'Roboto Mono, monospaced',
+            
+            
+            }} className='my-auto '>
                         <h1 className='
                         text-2xl
                         md:text-3xl
@@ -327,7 +332,7 @@ const Home = () => {
         '>Our commitment expands beyond our doors to patients in our communities. Take a look at our events and contributions.</h1> */}
                     </div>
 
-
+                    
 
 
                     <div className='
