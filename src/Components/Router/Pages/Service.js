@@ -13,7 +13,8 @@ const Service = () => {
             p-5 
             lg:p-10
             md:p-10   items-center text-green-1000'>
-                <div className='lg:flex justify-center items-center '>
+                <div className='
+                lg:flex justify-center items-center '>
                     <div className='lg:w-1/2 m-2'>
                         <h1 style={{ fontFamily: 'Noto Serif Bengali, serif' }}
                             className='
@@ -245,6 +246,73 @@ const Service = () => {
                     </div>
                 </div>
             </section>
+
+            <section
+            style={{
+                backgroundColor: "#85FFBD",
+                backgroundImage: 'linear-gradient(45deg, #85FFBD 0%, #fcff7d 100%)'
+            }}
+            
+            
+            className='mt-2 p-5'>
+                <div >
+                    <div className='flex justify-center items-center'>
+                        <img className='w-12' src={require('./../../../assets/images/100x100.jpg')}/>
+                        <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
+                            className='
+                            text-xl
+                            md:text-4xl
+                            lg:text-4xl
+                            font-extrabold
+                            text-center
+                            text-green-1000
+                            ml-2
+                            '>Origin Hospital</h1>
+                    </div>
+                    <div>
+                        <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
+                            className='
+                            text-xl
+                            md:text-4xl
+                            lg:text-4xl
+                            font-lg
+                            text-center
+                            text-green-1000
+                            '>Call: 01832466730 </h1>
+                        <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
+                            className='
+                            text-baseline
+                            md:text-xl
+                            lg:text-xl
+                            font-lg
+                            text-center
+                            '>S. Alam Plaza, South Station, Courtbazar, Cox's Bazar.</h1>
+                            <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
+                            className='
+                            text-baseline
+                            md:text-xl
+                            lg:text-xl
+                            font-lg
+                            text-center
+                            '>© All Right Reserved by Origin Hospital. </h1>
+                    </div>
+                    
+
+
+
+                </div>
+                <div>
+
+
+
+
+                </div>
+
+
+
+
+            </section>
+
 
 
         </>

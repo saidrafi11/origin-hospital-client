@@ -111,7 +111,7 @@ const Home = () => {
 
 
                     </Link>
-                    <div className='
+                    <Link to={'/service'} className='
                      h-64 bg-green-100 
                      font-bold
                      text-xl
@@ -139,7 +139,7 @@ const Home = () => {
 
                             <h1>Our Services</h1>
                         </div>
-                    </div>
+                    </Link>
 
                     <Link to={'/gallery'} className='
                      h-64 bg-green-100 
