@@ -292,13 +292,15 @@ const Home = () => {
             // }} 
             
             className='flex
+            justify-center
             sm:flex-row-reverse
             md:flex-row-reverse p-10 '>
                 <div className='grid 
             lg:grid-cols-2 
             md:grid-cols-1 
             sm:grid-cols-1 
-            gap-3'>
+            gap-3
+            '>
                 <div style={{ fontFamily: 'Roboto Mono, monospaced' }} className='my-auto '>
                         <h1 className='
                         text-2xl
@@ -333,10 +335,11 @@ const Home = () => {
     flex
     mx-auto
     justify-center
+    md:justify-center
     lg:justify-start
-    drop-shadow-lg
+    drop-shadow-lg p-5
     ' id="surrounding">
-                       <img src={require('./../../../assets/images/qr.png')} />
+                       <img src={require('./../../../assets/images/qrcode.png')} />
                     </div>
                     
                 </div>
