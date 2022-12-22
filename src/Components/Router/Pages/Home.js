@@ -140,7 +140,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className='
+                    <Link to={'/gallery'} className='
                      h-64 bg-green-100 
                      font-bold
                      text-xl
@@ -177,7 +177,7 @@ const Home = () => {
 
 
 
-                    </div>
+                    </Link>
                     <div className='
                      h-64 bg-green-100 
                      font-bold
@@ -400,6 +400,7 @@ const Home = () => {
 
                 </div>
                 <div>
+
 
 
 

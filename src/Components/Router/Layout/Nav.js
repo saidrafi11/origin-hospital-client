@@ -14,7 +14,7 @@ const Nav = () => {
       <li className="hover-bordered"><Link to={'/'}>Home</Link></li>
       <li className="hover-bordered"><Link to={'/appointment'}>Appointment</Link></li>
       
-      <li className="hover-bordered"><a>Service</a></li>
+      <li className="hover-bordered"><Link to={'/service'}>Service</Link></li>
       <li className="hover-bordered"><a>About Us</a></li>
     
       </ul>
@@ -29,12 +29,14 @@ const Nav = () => {
       <li className='mx-5  hover:text-green-500 '><Link to={'/'}>Home</Link></li>
       <li className=' hover:text-green-500 mx-5 '><Link to={'/appointment'}>Appointment</Link></li>
       
-      <li className=' hover:text-green-500 mx-5 '><a>Service</a></li>
+      <li className=' hover:text-green-500 mx-5 '><Link to={'/service'}>Service</Link></li>
       <li className=' hover:text-green-500 mx-5 '><a>About Us</a></li>
     </ul>
   </div>
   <div className=" navbar-end ">
-    <a href='tel:01832466730' className=" btn btn-outline lg:btn-wide btn-error font-bold">Call us</a>
+    <a href='tel:01832466730' className=" btn btn-outline lg:btn-wide btn-error font-bold
+    text-sm
+    lg:text-2xl">Call us</a>
   </div>
 </div>
     );
