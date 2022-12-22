@@ -38,8 +38,7 @@ const Home = () => {
                     md:text-2xl 
                     sm:text-1xl 
                     sm:text-justify
-                    lg:text-start
-                    text-justify
+                    lg:p-2
                     
                     '>We know our patients have a choice in several different areas, so we go out of our way to deliver the level of care and compassion we would want for our own families. Schedule an appointment with us today.</h1>
                     </div>
@@ -92,6 +91,7 @@ const Home = () => {
                      items-center
 
                      text-green-500 hover:bg-green-200
+
                     '>
                         <div>
                             <div className='flex
@@ -285,7 +285,71 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className='my-2'>
+            <section 
+            // style={{
+            //     backgroundColor: "#85FFBD",
+            //     backgroundImage: 'linear-gradient(45deg, #85FFBD 0%, #fcff7d 100%)'
+            // }} 
+            
+            className='flex
+            sm:flex-row-reverse
+            md:flex-row-reverse p-10 '>
+                <div className='grid 
+            lg:grid-cols-2 
+            md:grid-cols-1 
+            sm:grid-cols-1 
+            gap-3'>
+                <div style={{ fontFamily: 'Roboto Mono, monospaced' }} className='my-auto '>
+                        <h1 className='
+                        text-2xl
+                        md:text-3xl
+                        lg:text-4xl
+                        
+                         font-bold
+                         text-center
+                         md:text-center
+                         lg:text-end
+                         
+                         
+                         text-green-1000'>Scan the QR Code to book appointment</h1>
+                        {/* <h1 className='
+        text-baseline 
+        md:text-2xl 
+        text-green-900
+        
+        md:text-center
+        lg:text-start
+        text-justify
+        
+        
+        '>Our commitment expands beyond our doors to patients in our communities. Take a look at our events and contributions.</h1> */}
+                    </div>
+
+
+
+
+                    <div className='
+    w-80
+    flex
+    mx-auto
+    justify-center
+    lg:justify-start
+    drop-shadow-lg
+    ' id="surrounding">
+                       <img src={require('./../../../assets/images/qr.png')} />
+                    </div>
+                    
+                </div>
+            </section>
+
+            <section
+            style={{
+                backgroundColor: "#85FFBD",
+                backgroundImage: 'linear-gradient(45deg, #85FFBD 0%, #fcff7d 100%)'
+            }}
+            
+            
+            className='mt-2 p-5'>
                 <div >
                     <div className='flex justify-center items-center'>
                         <img className='w-12' src={require('./../../../assets/images/100x100.jpg')}/>
@@ -296,7 +360,8 @@ const Home = () => {
                             lg:text-4xl
                             font-extrabold
                             text-center
-                            
+                            text-green-1000
+                            ml-2
                             '>Origin Hospital</h1>
                     </div>
                     <div>
@@ -307,6 +372,7 @@ const Home = () => {
                             lg:text-4xl
                             font-lg
                             text-center
+                            text-green-1000
                             '>Call: 01832466730 </h1>
                         <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
                             className='

@@ -22,19 +22,19 @@ const Nav = () => {
     
     <div className='flex justify-center items-center'>
     <Link to={'/'} ><img className='w-12' src={require('./../../../assets/images/100x100.jpg')} alt="" /></Link>
-    <Link to={'/'} className=" normal-case text-xl lg:text-2xl font-bold text-lime-800 w-52 lg:text-3xl">Origin Hospital</Link></div>
+    <Link to={'/'} className=" normal-case text-xl lg:text-2xl font-bold text-lime-800 w-52 lg:text-2xl">Origin Hospital</Link></div>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 font-semibold text-lg">
-      <li className='hover:text-green-700'><Link to={'/'}>Home</Link></li>
-      <li className='hover:text-green-700'><Link to={'/appointment'}>Appointment</Link></li>
+    <ul className=" menu-horizontal px-1 font-semibold text-lg">
+      <li className='mx-5  hover:text-green-500 '><Link to={'/'}>Home</Link></li>
+      <li className=' hover:text-green-500 mx-5 '><Link to={'/appointment'}>Appointment</Link></li>
       
-      <li className='hover:text-green-700'><a>Service</a></li>
-      <li className='hover:text-green-700'><a>About Us</a></li>
+      <li className=' hover:text-green-500 mx-5 '><a>Service</a></li>
+      <li className=' hover:text-green-500 mx-5 '><a>About Us</a></li>
     </ul>
   </div>
   <div className=" navbar-end ">
-    <a href='tel:01861664711' className=" btn btn-outline lg:btn-wide btn-error font-bold">Call us</a>
+    <a href='tel:01832466730' className=" btn btn-outline lg:btn-wide btn-error font-bold">Call us</a>
   </div>
 </div>
     );
