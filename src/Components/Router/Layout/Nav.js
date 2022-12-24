@@ -61,7 +61,7 @@ const Nav = () => {
                 <div className="avatar mx-2">
                   <div className="w-10  rounded-full ring ring-success  ring-offset-base-100
                   ring-offset-2">
-                    <img src="https://placeimg.com/192/192/people" />
+                    <img src={user?.photoURL} />
                   </div>
                 </div>
                 <button onClick={handleLogOut} className='btn btn-outline btn-error text-green-900 font-bold mx-1'>
@@ -82,7 +82,7 @@ const Nav = () => {
             <>
               <a href='tel:01832466730' className=" btn btn-outline lg:btn-wide btn-error font-bold
     text-sm
-    lg:text-2xl">Call us</a>
+    lg:text-xl">Call us</a>
             </>
         }
       </div>
