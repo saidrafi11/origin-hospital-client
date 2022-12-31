@@ -30,7 +30,7 @@ const Nav = () => {
             <li className="hover-bordered"><Link to={'/appointment'}>Appointment</Link></li>
 
             <li className="hover-bordered"><Link to={'/service'}>Service</Link></li>
-            <li className="hover-bordered"><a>About Us</a></li>
+            <li className="hover-bordered"><Link to={'/aboutus'}>About us</Link></li>
 
           </ul>
         </div>
@@ -45,7 +45,7 @@ const Nav = () => {
           <li className=' hover:text-green-500 mx-5 '><Link to={'/appointment'}>Appointment</Link></li>
 
           <li className=' hover:text-green-500 mx-5 '><Link to={'/service'}>Service</Link></li>
-          <li className=' hover:text-green-500 mx-5 '><a>About Us</a></li>
+          <li className=' hover:text-green-500 mx-5 '><Link to={'/aboutus'}>About us</Link></li>
         </ul>
       </div>
       <div className=" navbar-end ">
@@ -73,16 +73,22 @@ const Nav = () => {
 
 
 
-                {/* <Image className='userProfile' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ws9GcjatdlqRxmv839G7uXcDaDcfyqDt8w&usqp=CAU" alt="" width="30" height="24"></Image> */}
+                
 
               </div>
 
             </>
             :
             <>
+            <a href='http://www.facebook.com/originhospital/' className=" btn btn-circle mx-2  btn-link
+    text-sm
+    lg:text-xl"><img className='userProfile' src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="" width="30" height="24"></img></a>
+
+
               <a href='tel:01832466730' className=" btn btn-outline lg:btn-wide btn-error font-bold
     text-sm
     lg:text-xl">Call us</a>
+              
             </>
         }
       </div>
