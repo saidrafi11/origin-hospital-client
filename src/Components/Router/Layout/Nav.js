@@ -1,4 +1,4 @@
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
@@ -46,6 +46,10 @@ const Nav = () => {
 
           <li className=' hover:text-green-500 mx-5 '><Link to={'/service'}>Service</Link></li>
           <li className=' hover:text-green-500 mx-5 '><Link to={'/aboutus'}>About us</Link></li>
+         
+
+
+
         </ul>
       </div>
       <div className=" navbar-end ">
@@ -68,27 +72,32 @@ const Nav = () => {
                   <h1 className=''>SignOut  <FontAwesomeIcon
                     icon={faRightFromBracket} size="xl" /></h1>
                 </button>
+                <Link to={'/admin-dashboard'}  className='btn btn-outline btn-error text-green-900 font-bold mx-1'>
+                  <h1 className=''>Dashboard  <FontAwesomeIcon
+                    icon={faRightFromBracket} size="xl" /></h1>
+                </Link>
 
 
 
 
 
-                
+
 
               </div>
 
             </>
             :
             <>
-            <a href='http://www.facebook.com/originhospital/' className=" btn btn-circle mx-2  btn-link
+              <a href='http://www.facebook.com/originhospital/' className=" btn btn-circle   btn-link
     text-sm
     lg:text-xl"><img className='userProfile' src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="" width="30" height="24"></img></a>
 
 
-              <a href='tel:01832466730' className=" btn btn-outline lg:btn-wide btn-error font-bold
+              <a href='tel:01832466730' className=" btn btn-ghost
     text-sm
-    lg:text-xl">Call us</a>
-              
+    lg:text-xl">
+                <FontAwesomeIcon icon={faPhone} size="xl" color='red' /></a>
+
             </>
         }
       </div>

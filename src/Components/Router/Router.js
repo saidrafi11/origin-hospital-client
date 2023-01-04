@@ -2,6 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "./Layout/Main";
 import Aboutus from "./Pages/Aboutus";
 import Admin from "./Pages/Admin";
+import AdminDashboard from "./Pages/AdminDashboard/AdminDashboard";
+import IndoorServices from "./Pages/AdminDashboard/IndoorServices";
+import OtherServices from "./Pages/AdminDashboard/OtherServics";
+import OutdoorServices from "./Pages/AdminDashboard/OutdoorServices";
 import Appointment from "./Pages/Appointment";
 import Gallary from "./Pages/Gallary";
 import Home from "./Pages/Home";
@@ -58,6 +62,24 @@ const router = createBrowserRouter([
                 element:<Admin></Admin>
             },
 
+        ]
+    },
+    {
+        path:'/admin-dashboard',
+        element: <AdminDashboard></AdminDashboard>,
+        children:[
+            {
+                path:'/admin-dashboard',
+                element: <IndoorServices></IndoorServices>
+            },
+            {
+                path:'/admin-dashboard/outdoor-services',
+                element: <OutdoorServices></OutdoorServices>
+            },
+            {
+                path:'/admin-dashboard/other-services',
+                element: <OtherServices></OtherServices>
+            },
         ]
     }
 ])

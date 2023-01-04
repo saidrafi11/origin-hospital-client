@@ -1,7 +1,47 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import '../Pages/linebreak.css'
+import { FallingLines, Oval } from 'react-loader-spinner';
+
 const Service = () => {
+    const [loading, setLoading] = useState(true)
+    const [indoorServices, setIndoorServices] = useState([])
+    const [outdoorServices, setOutdoorServices] = useState([])
+    const [otherServices, setOtherServices] = useState([])
+
+
+    useEffect(() => {
+        setLoading(true)
+        fetch(`https://origin-hospital-server.vercel.app/indoor-services`)
+            .then(res => res.json())
+            .then(data => {
+                setIndoorServices(data)
+                setLoading(false)
+            })
+
+    }, [])
+    useEffect(() => {
+        setLoading(true)
+        fetch(`https://origin-hospital-server.vercel.app/outdoor-services`)
+            .then(res => res.json())
+            .then(data => {
+                setOutdoorServices(data)
+                setLoading(false)
+            })
+
+    }, [])
+    useEffect(() => {
+        setLoading(true)
+        fetch(`https://origin-hospital-server.vercel.app/other-services`)
+            .then(res => res.json())
+            .then(data => {
+                setOtherServices(data)
+                setLoading(false)
+            })
+
+    }, [])
+
+
     return (
         <>
             <section style={{
@@ -13,8 +53,7 @@ const Service = () => {
             p-5 
             lg:p-10
             md:p-10   items-center text-green-1000'>
-                <div className='
-                lg:flex justify-center items-center '>
+                <div className='lg:flex justify-center items-center '>
                     <div className='lg:w-1/2 m-2'>
                         <h1 style={{ fontFamily: 'Noto Serif Bengali, serif' }}
                             className='
@@ -28,15 +67,15 @@ const Service = () => {
                     px-5
                     
                     
-                    '>সেবা সমূহঃ</h1>
+                    '>ইনডোর সেবা সমূহ</h1>
                         <h1 style={{ fontFamily: 'Noto Serif Bengali, serif' }} className='
                     md:text-2xl 
                     sm:text-1xl 
                     sm:text-justify
-                    p-5
+                    p-1
                     
                     '>
-                         <h1 style={{ fontFamily: 'Noto Serif Bengali, serif' }} className='
+                            <h1 style={{ fontFamily: 'Noto Serif Bengali, serif' }} className='
                     md:text-2xl 
                     sm:text-1xl 
                     sm:text-justify
@@ -45,19 +84,44 @@ const Service = () => {
                     line-break
                     text-green-900
                     '>
-                        {`• স্তনরোগের চিকিৎসা ও অপারেশন
-                        • পেটের টিউমার অপারেশন, অন্যান্য নিউমার অপসারন ও জরায়ুর অপারেশন
-                        • লিউকোরিয়া ও জরায়ুর মুখের ঘা এবং সমস্যাগ্রন্থ মায়ের চিকিৎসা
-                        • যৌনরোগ সম্পর্কিত পরামর্শ ও চিকিৎসা(STD Awareness Programme)
-                        • জন্মনিয়ন্ত্রণ পরামর্শ (Contraception counselling)
-                        • সন্তানহীন দম্পতিদের সু-চিকিৎসা (Infertility Rx)
-                        • মহিলাদের মাসিক (ঋতু চক্র) বন্ধ হয়ে যাওয়া (রজঃ নিবৃতি) এর পরবর্তী ও পূর্ববর্তী উপসর্গ সমূহের চিকিৎসা
-                        • গর্ভকালীন সেবা (ANC) প্রসব পরবর্তী সেবা (PNC)
-                        `}
-                            
+                        {
+                                    loading ? <>
 
+                                        <div className='flex justify-center items-center'>
+                                            <Oval
+                                                height={80}
+                                                width={80}
+                                                color="#4fa94d"
+                                                wrapperStyle={{}}
+                                                wrapperClass=""
+                                                visible={true}
+                                                ariaLabel='oval-loading'
+                                                secondaryColor="#4fa94d"
+                                                strokeWidth={2}
+                                                strokeWidthSecondary={2}
+
+                                            />
+                                        </div>
+
+
+                                    </>
+
+                                        :
+
+                                        <>
+                                            <ul class="list-disc">
+                                                {indoorServices?.map(service => <li>{service.serviceName}</li>)}
+                                            </ul>
+
+                                        </>
+                                }
+
+
+
+
+                            </h1>
                         </h1>
-                        </h1>
+
                     </div>
                     <div className='
                 lg:w-1/2  
@@ -150,22 +214,48 @@ const Service = () => {
                     pt-0
                     line-break
                     text-green-900
-                    '>
-                        {`→ অক্সিজেন ও নেবুলাইজেশন সুবিধা
-                        → স্বল্পমূল্যে নরমাল ডেলিভারি ও সিজারিয়ান অপারেশন
-                        → বায়োকেমিস্ট্রি এনালাইজার, হরমোন এনালাইজার
-                        → সেল কাউন্টার সমৃদ্ধ অত্যাধুনিক প্যাথলজি বিভাগ, ডিজিটাল এক্স-রে ও কনসালটেন্ট দ্বারা রিপোর্টিং
-                        → আল্ট্রাসনোগ্রাফি ও ১৫ চ্যানেল ইসিজি
-                        → বিশেষজ্ঞ ডাক্তারদের চেম্বার
-                        `}
-                            
+                    '>{
+                        loading ? <>
+
+                            <div className='flex justify-center items-center'>
+                                <Oval
+                                    height={80}
+                                    width={80}
+                                    color="#4fa94d"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                    visible={true}
+                                    ariaLabel='oval-loading'
+                                    secondaryColor="#4fa94d"
+                                    strokeWidth={2}
+                                    strokeWidthSecondary={2}
+
+                                />
+                            </div>
+
+
+                        </>
+
+                            :
+
+                            <>
+                                <ul class="list-disc">
+                                    {outdoorServices?.map(service => <li>{service.serviceName}</li>)}
+                                </ul>
+
+                            </>
+                    }
+
 
                         </h1>
 
-                        
+
+
                     </div>
                 </div>
             </section>
+
+
 
             <section style={{
                 backgroundColor: "#60ffaa",
@@ -176,7 +266,8 @@ const Service = () => {
             p-5 
             lg:p-10
             md:p-10   items-center text-green-1000'>
-                <div className='lg:flex justify-center items-center '>
+                <div className='
+                lg:flex justify-center items-center '>
                     <div className='lg:w-1/2 m-2'>
                         <h1 style={{ fontFamily: 'Noto Serif Bengali, serif' }}
                             className='
@@ -190,15 +281,15 @@ const Service = () => {
                     px-5
                     
                     
-                    '>ইনডোর সেবা সমূহ</h1>
+                    '>গাইনি সেবা সমূহঃ</h1>
                         <h1 style={{ fontFamily: 'Noto Serif Bengali, serif' }} className='
                     md:text-2xl 
                     sm:text-1xl 
                     sm:text-justify
-                    p-1
+                    p-5
                     
                     '>
-                         <h1 style={{ fontFamily: 'Noto Serif Bengali, serif' }} className='
+                            <h1 style={{ fontFamily: 'Noto Serif Bengali, serif' }} className='
                     md:text-2xl 
                     sm:text-1xl 
                     sm:text-justify
@@ -207,18 +298,52 @@ const Service = () => {
                     line-break
                     text-green-900
                     '>
-                        {`→ ২৪ ঘন্টা মেডিকেল অফিসার সার্ভিস
-                       →  শীততাপ নিয়ন্ত্রিত কেবিন ও মানসম্মত ওয়ার্ড সুবিধা
-                       → দক্ষ নার্স দ্বারা রোগীদের সার্বক্ষণিক তত্বাবধান
-                       → উন্নত প্রযুক্তি সম্পন্ন অপারেশন থিয়েটার
-                       সার্বক্ষণিক বিদ্যুৎ সরবরাহের নিশ্চয়তা
-                       → ২৪ ঘন্টা ফার্মেসী খোলা রাখার ব্যাবস্থা
-                       → স্বল্প খরচে উন্নত চিকিৎসা সেবা
-                        `}
-                            
+                                {
+                                    loading ? <>
 
+                                        <div className='flex justify-center items-center'>
+                                            <Oval
+                                                height={80}
+                                                width={80}
+                                                color="#4fa94d"
+                                                wrapperStyle={{}}
+                                                wrapperClass=""
+                                                visible={true}
+                                                ariaLabel='oval-loading'
+                                                secondaryColor="#4fa94d"
+                                                strokeWidth={2}
+                                                strokeWidthSecondary={2}
+
+                                            />
+                                        </div>
+
+
+                                    </>
+
+                                        :
+
+                                        <>
+                                            <ul class="list-disc">
+                                                {otherServices?.map(service => <li>{service.serviceName}</li>)}
+                                            </ul>
+
+                                        </>
+                                }
+
+
+                            </h1>
                         </h1>
-                        </h1>
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                     <div className='
                 lg:w-1/2  
@@ -247,17 +372,18 @@ const Service = () => {
                 </div>
             </section>
 
+
             <section
-            style={{
-                backgroundColor: "#85FFBD",
-                backgroundImage: 'linear-gradient(45deg, #85FFBD 0%, #fcff7d 100%)'
-            }}
-            
-            
-            className='mt-2 p-5'>
+                style={{
+                    backgroundColor: "#85FFBD",
+                    backgroundImage: 'linear-gradient(45deg, #85FFBD 0%, #fcff7d 100%)'
+                }}
+
+
+                className='mt-2 p-5'>
                 <div >
                     <div className='flex justify-center items-center'>
-                        <img className='w-12' src={require('./../../../assets/images/100x100.jpg')}/>
+                        <img className='w-12' src={require('./../../../assets/images/100x100.jpg')} />
                         <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
                             className='
                             text-xl
@@ -287,7 +413,7 @@ const Service = () => {
                             font-lg
                             text-center
                             '>S. Alam Plaza, South Station, Courtbazar, Cox's Bazar.</h1>
-                            <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
+                        <h1 style={{ fontFamily: 'Roboto Mono, monospaced' }}
                             className='
                             text-baseline
                             md:text-xl
@@ -296,7 +422,7 @@ const Service = () => {
                             text-center
                             '>© All Right Reserved by Origin Hospital. </h1>
                     </div>
-                    
+
 
 
 

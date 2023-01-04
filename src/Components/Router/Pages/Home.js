@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarCheck, faCircleInfo, faCoffee, faFaceAngry, faHandHoldingMedical, faImage } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarCheck, faCircleInfo, faCoffee, faFaceAngry, faHandHoldingMedical, faImage, faPhone } from '@fortawesome/free-solid-svg-icons'
 import 'animate.css';
 import { Link } from 'react-router-dom';
 
@@ -104,6 +104,7 @@ const Home = () => {
 
 
                                     icon={faCalendarCheck} size="2x" />
+                                
                             </div>
 
                             <h1>Book appointment online</h1>
