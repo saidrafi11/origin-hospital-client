@@ -8,6 +8,7 @@ import IndoorServices from "./Pages/AdminDashboard/IndoorServices";
 import OtherServices from "./Pages/AdminDashboard/OtherServics";
 import OutdoorServices from "./Pages/AdminDashboard/OutdoorServices";
 import Appointment from "./Pages/Appointment";
+import DepertmentDetails from "./Pages/DepertmentDetails";
 import Gallary from "./Pages/Gallary";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
             {
                 path:'/admin',
                 element:<Admin></Admin>
+            },
+            {
+                path:'/department/:id',
+                element:<DepertmentDetails></DepertmentDetails>
             },
 
         ]

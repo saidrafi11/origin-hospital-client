@@ -1,10 +1,22 @@
 import { faPhone, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const Nav = () => {
+
+  const {data:depertments =[], refetch, isLoading} = useQuery({
+    queryKey:['depertments'],
+    queryFn: async () => {
+        const res = await fetch(`https://origin-hospital-server.vercel.app/depertments`);
+        const data = await res.json();
+        return data;
+    } 
+    
+})
+console.log(depertments);
 
 
 
@@ -28,6 +40,15 @@ const Nav = () => {
 
             <li className="hover-bordered"><Link to={'/'}>Home</Link></li>
             <li className="hover-bordered"><Link to={'/appointment'}>Appointment</Link></li>
+            <li tabIndex={0}>
+            <span>Departments</span>
+            <ul className="bg-base-100">
+
+              {depertments.map(depertment=><li id={depertment._id}><Link to={`/department/${depertment.depertmentURL}`}>{depertment.depertmentName}</Link></li>)}
+              
+              
+            </ul>
+          </li>
 
             <li className="hover-bordered"><Link to={'/service'}>Service</Link></li>
             <li className="hover-bordered"><Link to={'/aboutus'}>About us</Link></li>
@@ -40,13 +61,19 @@ const Nav = () => {
           <Link to={'/'} className=" normal-case text-xl lg:text-2xl font-bold text-lime-800 w-52 lg:text-2xl">Origin Hospital</Link></div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className=" menu-horizontal px-1 font-semibold text-lg">
+        <ul className="menu  menu-horizontal px-1 font-semibold text-lg">
           <li className='mx-5  hover:text-green-500 '><Link to={'/'}>Home</Link></li>
           <li className=' hover:text-green-500 mx-5 '><Link to={'/appointment'}>Appointment</Link></li>
+          <li tabIndex={0}>
+            <span>Departments</span>
+            <ul className="bg-base-100">
+            {depertments.map(depertment=><li className='hover-bordered' id={depertment._id}><Link to={`/department/${depertment.depertmentURL}`}>{depertment.depertmentName}</Link></li>)}
+            </ul>
+          </li>
 
           <li className=' hover:text-green-500 mx-5 '><Link to={'/service'}>Service</Link></li>
           <li className=' hover:text-green-500 mx-5 '><Link to={'/aboutus'}>About us</Link></li>
-         
+
 
 
 
@@ -72,14 +99,10 @@ const Nav = () => {
                   <h1 className=''>SignOut  <FontAwesomeIcon
                     icon={faRightFromBracket} size="xl" /></h1>
                 </button>
-                <Link to={'/admin-dashboard'}  className='btn btn-outline btn-error text-green-900 font-bold mx-1'>
+                <Link to={'/admin-dashboard'} className='btn btn-outline btn-error text-green-900 font-bold mx-1'>
                   <h1 className=''>Dashboard  <FontAwesomeIcon
                     icon={faRightFromBracket} size="xl" /></h1>
                 </Link>
-
-
-
-
 
 
 
