@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "./Layout/Main";
 import Aboutus from "./Pages/Aboutus";
 import Admin from "./Pages/Admin";
+import AddDepertment from "./Pages/AdminDashboard/AddDepertment";
 import AdminDashboard from "./Pages/AdminDashboard/AdminDashboard";
 import IndoorServices from "./Pages/AdminDashboard/IndoorServices";
 import OtherServices from "./Pages/AdminDashboard/OtherServics";
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
             {
                 path:'/admin-dashboard/other-services',
                 element: <OtherServices></OtherServices>
+            },
+            {
+                path:'/admin-dashboard/add-depertment',
+                element: <AddDepertment></AddDepertment>
             },
         ]
     }

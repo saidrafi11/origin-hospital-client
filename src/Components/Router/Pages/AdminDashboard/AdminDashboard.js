@@ -32,6 +32,7 @@ const AdminDashboard = () => {
       <li><Link className='font-bold' to={'/admin-dashboard'}>Indoor Services</Link></li>
       <li><Link className='font-bold' to={'/admin-dashboard/outdoor-services'}>Outdoor Services</Link></li>
       <li><Link className='font-bold' to={'/admin-dashboard/other-services'}>Other Services</Link></li>
+      <li><Link className='font-bold' to={'/admin-dashboard/add-depertment'}>Add depertment</Link></li>
     </ul>
   
   </div>
