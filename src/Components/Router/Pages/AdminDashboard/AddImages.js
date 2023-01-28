@@ -8,29 +8,29 @@ import "yet-another-react-lightbox/styles.css";
 const AddImages = () => {
     const [image, setImage] = useState('')
     const [IMGerror, setIMGError] = useState('')
-    console.log(image);
+    // console.log(image);
     const handleImage = (event) => {
 
         setImage(event.target.files[0])
-        console.log(image);
+        // console.log(image);
     }
 
 
     const { data: imgInfo = [], refetch, isLoading } = useQuery({
         queryKey: ['img-file'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/img-file`);
+            const res = await fetch(`https://test-server.skyshopuk.com/img-file`);
             const data = await res.json();
             return data;
         }
 
     })
-    console.log(imgInfo);
+    // console.log(imgInfo);
     let imgList = []
     for (let i = 0; i < imgInfo.length; i++) {
-        imgList.push({ src: `http://localhost:5000/images/${imgInfo[i].ImgFile}`, width: 1600, height: 900 })
+        imgList.push({ src: `https://test-server.skyshopuk.com/images/${imgInfo[i].ImgFile}`, width: 1600, height: 900 })
     }
-    console.log(imgList);
+    // console.log(imgList);
 
 
 
@@ -40,7 +40,7 @@ const AddImages = () => {
 
         const formData = new FormData()
         formData.append('image', image)
-        axios.post('http://localhost:5000/upload', formData,
+        axios.post('https://test-server.skyshopuk.com/upload', formData,
             {
                 headers: {
                     'encType': 'multipart/form-data'
@@ -56,10 +56,10 @@ const AddImages = () => {
 
                     ImgFile: fileName
                 }
-                console.log(fileName);
-                axios.post('http://localhost:5000/img-file', fileInfo)
+                // console.log(fileName);
+                axios.post('https://test-server.skyshopuk.com/img-file', fileInfo)
                     .then((res) => {
-                        console.log(res);
+                        // console.log(res);
                         if (res.data.acknowledged) {
                             toast.success('Image added succesfully!', {
                                 position: "top-center",
@@ -88,24 +88,25 @@ const AddImages = () => {
         console.log(agree)
         if (agree) {
             console.log(_id)
-            fetch(`http://localhost:5000/delete-imgInfo/${_id}`, {
+            fetch(`https://test-server.skyshopuk.com/delete-imgInfo/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
 
-                    console.log(data)
+                    // console.log(data)
                     if (data.deletedCount > 0) {
 
-                        fetch(`http://localhost:5000/images/${imgFile}`, {
+                        fetch(`https://test-server.skyshopuk.com/images/${imgFile}`, {
                             method: 'DELETE'
                         })
                             .then(res => res.json())
                             .then(data => {
+                                // console.log(data);
 
-                                if (data.deletedCount > 0) {
+                                if (data.message) {
 
-                                    toast.success('Image deleted succesfully!', {
+                                    toast.success(`${data.message}`, {
                                         position: "top-center",
                                         autoClose: 3000,
                                         hideProgressBar: false,
@@ -126,7 +127,7 @@ const AddImages = () => {
 
 
 
-                        // navigate(from, { replace: true })
+                        
 
 
                     }
@@ -170,7 +171,7 @@ const AddImages = () => {
                     <tbody>
 
                         {imgInfo?.map(img => <tr>
-                            <td><img width='150px' src={`http://localhost:5000/images/${img.ImgFile}`}></img></td>
+                            <td><img width='150px' src={`https://test-server.skyshopuk.com/images/${img.ImgFile}`}></img></td>
 
                             <td><button onClick={() => handleDelete(img._id, img.ImgFile)} className='btn btn-xs btn-error'>Delete</button></td>
                         </tr>)}

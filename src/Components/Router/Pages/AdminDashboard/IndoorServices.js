@@ -20,7 +20,7 @@ const IndoorServices = () => {
 
         }
         console.log(editedService);
-        fetch('https://origin-hospital-server.vercel.app/indoor-services', {
+        fetch('https://test-server.skyshopuk.com/indoor-services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -52,7 +52,7 @@ const IndoorServices = () => {
 
     useEffect(() => {
 
-        fetch(`https://origin-hospital-server.vercel.app/indoor-services`)
+        fetch(`https://test-server.skyshopuk.com/indoor-services`)
             .then(res => res.json())
             .then(data => {
                 setServices(data)
@@ -66,7 +66,7 @@ const IndoorServices = () => {
         console.log(agree)
         if(agree){
             console.log(_id)
-           fetch(`https://origin-hospital-server.vercel.app/delete-indoor-service/${_id}`,{
+           fetch(`https://test-server.skyshopuk.com/delete-indoor-service/${_id}`,{
             method: 'DELETE'})
             .then(res => res.json())
             .then(data => {

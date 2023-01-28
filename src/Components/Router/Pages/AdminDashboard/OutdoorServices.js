@@ -18,7 +18,7 @@ const OutdoorServices = () => {
 
         }
         console.log(editedService);
-        fetch('https://origin-hospital-server.vercel.app/outdoor-services', {
+        fetch('https://test-server.skyshopuk.com/outdoor-services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +50,7 @@ const OutdoorServices = () => {
 
     useEffect(() => {
 
-        fetch(`https://origin-hospital-server.vercel.app/outdoor-services`)
+        fetch(`https://test-server.skyshopuk.com/outdoor-services`)
             .then(res => res.json())
             .then(data => {
                 setServices(data)
@@ -64,7 +64,7 @@ const OutdoorServices = () => {
         console.log(agree)
         if(agree){
             console.log(_id)
-           fetch(`https://origin-hospital-server.vercel.app/delete-outdoor-service/${_id}`,{
+           fetch(`https://test-server.skyshopuk.com/delete-outdoor-service/${_id}`,{
             method: 'DELETE'})
             .then(res => res.json())
             .then(data => {

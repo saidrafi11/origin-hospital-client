@@ -12,7 +12,7 @@ const Service = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`https://origin-hospital-server.vercel.app/indoor-services`)
+        fetch(`https://test-server.skyshopuk.com/indoor-services`)
             .then(res => res.json())
             .then(data => {
                 setIndoorServices(data)
@@ -22,7 +22,7 @@ const Service = () => {
     }, [])
     useEffect(() => {
         setLoading(true)
-        fetch(`https://origin-hospital-server.vercel.app/outdoor-services`)
+        fetch(`https://test-server.skyshopuk.com/outdoor-services`)
             .then(res => res.json())
             .then(data => {
                 setOutdoorServices(data)
@@ -32,7 +32,7 @@ const Service = () => {
     }, [])
     useEffect(() => {
         setLoading(true)
-        fetch(`https://origin-hospital-server.vercel.app/other-services`)
+        fetch(`https://test-server.skyshopuk.com/other-services`)
             .then(res => res.json())
             .then(data => {
                 setOtherServices(data)

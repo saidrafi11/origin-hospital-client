@@ -18,7 +18,7 @@ const OtherServices = () => {
 
         }
         console.log(editedService);
-        fetch('https://origin-hospital-server.vercel.app/other-services', {
+        fetch('https://test-server.skyshopuk.com/other-services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -49,7 +49,7 @@ const OtherServices = () => {
     }
     useEffect(() => {
 
-        fetch(`https://origin-hospital-server.vercel.app/other-services`)
+        fetch(`https://test-server.skyshopuk.com/other-services`)
             .then(res => res.json())
             .then(data => {
                 setServices(data)
@@ -63,7 +63,7 @@ const OtherServices = () => {
         console.log(agree)
         if(agree){
             console.log(_id)
-           fetch(`https://origin-hospital-server.vercel.app/delete-other-service/${_id}`,{
+           fetch(`https://test-server.skyshopuk.com/delete-other-service/${_id}`,{
             method: 'DELETE'})
             .then(res => res.json())
             .then(data => {

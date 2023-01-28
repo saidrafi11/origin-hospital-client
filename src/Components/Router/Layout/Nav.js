@@ -10,7 +10,7 @@ const Nav = () => {
   const {data:depertments =[], refetch, isLoading} = useQuery({
     queryKey:['depertments'],
     queryFn: async () => {
-        const res = await fetch(`https://origin-hospital-server.vercel.app/depertments`);
+        const res = await fetch(`https://test-server.skyshopuk.com/depertments`);
         const data = await res.json();
         return data;
     } 

@@ -2,7 +2,7 @@ import { async } from "@firebase/util";
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://origin-hospital-server.vercel.app/"
+    baseURL: "https://test-server.skyshopuk.com/"
 })
 
 export const getDPTs = async () => {

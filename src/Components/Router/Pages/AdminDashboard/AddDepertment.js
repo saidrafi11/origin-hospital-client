@@ -26,7 +26,7 @@ const AddDepertment = () => {
     const {data:depertments =[], refetch, isLoading} = useQuery({
         queryKey:['depertments'],
         queryFn: async () => {
-            const res = await fetch(`https://origin-hospital-server.vercel.app/depertments`);
+            const res = await fetch(`https://test-server.skyshopuk.com/depertments`);
             const data = await res.json();
             return data;
         } 
@@ -44,7 +44,7 @@ console.log(depertments);
 
 
         console.log(depertmentData);
-        fetch('https://origin-hospital-server.vercel.app/depertments', {
+        fetch('https://test-server.skyshopuk.com/depertments', {
         method: 'POST',
         headers:{
             'content-type': 'application/json'
@@ -84,7 +84,7 @@ console.log(depertments);
         const agree = window.confirm(`Are you want to delete ${depertment.depertmentName} depertment?`)
         console.log(agree)
         if(agree){
-        fetch(`https://origin-hospital-server.vercel.app/delete-depertments/${depertment._id}`, {
+        fetch(`https://test-server.skyshopuk.com/delete-depertments/${depertment._id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())

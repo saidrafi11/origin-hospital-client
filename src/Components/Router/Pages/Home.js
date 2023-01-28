@@ -73,25 +73,30 @@ const Home = () => {
             <section style={{ fontFamily: 'Roboto Mono, monospaced' }}>
                 <div className='
             grid lg:grid-cols-4 
-             md:grid-cols-2 
-            grid-cols-2
-            
-            gap-2 p-5  
+             md:grid-cols-1 
+            grid-cols-1
+            w-3/4
+            mx-auto
+            gap-1 p-5  
             '>
                     <Link to={'/appointment'} className='
-                     h-64 bg-green-100 
+                     h-64 bg-green-500 
                      font-bold
                      text-xl
-                     md:text-3xl
-                     lg:text-3xl
+                     hover:text-2xl
+                     md:text-2xl
+                     hover:md:text-3xl
+                     lg:text-2xl
+                     hover:lg:text-3xl
                      text-center
-                     rounded-lg
+                       drop-shadow-md 
+                     hover:drop-shadow-2xl
                      p-5
                      flex
                      justify-center
                      items-center
 
-                     text-green-500 hover:bg-green-200
+                     text-white 
 
                     '>
                         <div>
@@ -113,19 +118,23 @@ const Home = () => {
 
                     </Link>
                     <Link to={'/service'} className='
-                     h-64 bg-green-100 
+                     h-64 bg-white
                      font-bold
                      text-xl
-                     md:text-3xl
-                     lg:text-3xl
+                     hover:text-2xl
+                     md:text-2xl
+                     hover:md:text-3xl
+                     lg:text-2xl
+                     hover:lg:text-3xl
                      text-center
-                     rounded-lg
+                       drop-shadow-md
+                     hover:drop-shadow-2xl
                      p-5
                      flex
                      justify-center
                      items-center
 
-                     text-green-500 hover:bg-green-200
+                     text-green-500 
                     '> <div>
                             <div className='flex
              justify-center
@@ -143,19 +152,23 @@ const Home = () => {
                     </Link>
 
                     <Link to={'/gallery'} className='
-                     h-64 bg-green-100 
-                     font-bold
-                     text-xl
-                     md:text-3xl
-                     lg:text-3xl
-                     text-center
-                     rounded-lg
-                     p-5
-                     flex
-                     justify-center
-                     items-center
+                    h-64 bg-green-500 
+                    font-bold
+                    text-xl
+                    hover:text-2xl
+                    md:text-2xl
+                    hover:md:text-3xl
+                    lg:text-2xl
+                    hover:lg:text-3xl
+                    text-center
+                      drop-shadow-md 
+                    hover:drop-shadow-2xl
+                    p-5
+                    flex
+                    justify-center
+                    items-center
 
-                     text-green-500 hover:bg-green-200
+                    text-white  
                     '>
                         <div>
                             <div className='flex
@@ -181,19 +194,23 @@ const Home = () => {
 
                     </Link>
                     <Link to={'/aboutus'} className='
-                     h-64 bg-green-100 
+                     h-64 bg-white 
                      font-bold
                      text-xl
-                     md:text-3xl
-                     lg:text-3xl
+                     hover:text-2xl
+                     md:text-2xl
+                     hover:md:text-3xl
+                     lg:text-2xl
+                     hover:lg:text-3xl
                      text-center
-                     rounded-lg
+                       drop-shadow-md
+                     hover:drop-shadow-2xl
                      p-5
                      flex
                      justify-center
                      items-center
 
-                     text-green-500 hover:bg-green-200
+                     text-green-500 
                     '>
 
                         <div>

@@ -9,7 +9,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { useQuery } from '@tanstack/react-query';
-// import slides from "../data/slides"
+
 
 
 const Gallary = () => {
@@ -18,7 +18,7 @@ const Gallary = () => {
   const { data: imgInfo = [], isLoading } = useQuery({
     queryKey: ['img-file'],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/img-file`);
+      const res = await fetch(`https://test-server.skyshopuk.com/img-file`);
       const data = await res.json();
       return data;
     }
@@ -27,7 +27,7 @@ const Gallary = () => {
   console.log(imgInfo);
   let imgList = []
   for (let i = 0; i < imgInfo.length; i++) {
-    imgList.push({ src: `http://localhost:5000/images/${imgInfo[i].ImgFile}`, width: 1600, height: 900 })
+    imgList.push({ src: `https://test-server.skyshopuk.com/images/${imgInfo[i].ImgFile}`, width: 1600, height: 900 })
   }
   console.log(imgList);
 
