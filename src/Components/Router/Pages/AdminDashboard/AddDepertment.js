@@ -39,7 +39,7 @@ console.log(depertments);
 
         const depertmentData = {
             depertmentName : depertment,
-            depertmentURL: depertment.replace(' ', '-')
+            depertmentURL: depertment.toLowerCase().replace(' ', '-')
         }
 
 

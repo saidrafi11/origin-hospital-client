@@ -3,6 +3,8 @@ import Main from "./Layout/Main";
 import Aboutus from "./Pages/Aboutus";
 import Admin from "./Pages/Admin";
 import AddDepertment from "./Pages/AdminDashboard/AddDepertment";
+import AddDoctor from "./Pages/AdminDashboard/AddDoctor";
+import AddImages from "./Pages/AdminDashboard/AddImages";
 import AdminDashboard from "./Pages/AdminDashboard/AdminDashboard";
 import IndoorServices from "./Pages/AdminDashboard/IndoorServices";
 import OtherServices from "./Pages/AdminDashboard/OtherServics";
@@ -89,6 +91,14 @@ const router = createBrowserRouter([
             {
                 path:'/admin-dashboard/add-depertment',
                 element: <AddDepertment></AddDepertment>
+            },
+            {
+                path:'/admin-dashboard/add-images',
+                element: <AddImages></AddImages>
+            },
+            {
+                path:'/admin-dashboard/add-doctor',
+                element: <AddDoctor></AddDoctor>
             },
         ]
     }

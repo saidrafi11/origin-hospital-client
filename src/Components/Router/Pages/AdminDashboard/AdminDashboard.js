@@ -33,6 +33,8 @@ const AdminDashboard = () => {
       <li><Link className='font-bold' to={'/admin-dashboard/outdoor-services'}>Outdoor Services</Link></li>
       <li><Link className='font-bold' to={'/admin-dashboard/other-services'}>Other Services</Link></li>
       <li><Link className='font-bold' to={'/admin-dashboard/add-depertment'}>Add depertment</Link></li>
+      <li><Link className='font-bold' to={'/admin-dashboard/add-images'}>Add images</Link></li>
+      <li><Link className='font-bold' to={'/admin-dashboard/add-doctor'}>Add doctor</Link></li>
     </ul>
   
   </div>

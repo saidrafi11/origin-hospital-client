@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-google-font-loader": "^1.1.0",
+    "react-helmet": "^6.1.0",
     "react-hook-form": "^7.41.1",
     "react-iframe": "^1.8.5",
     "react-loader-spinner": "^5.3.4",

@@ -8,46 +8,53 @@ import Video from "yet-another-react-lightbox/plugins/video";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { useQuery } from '@tanstack/react-query';
 // import slides from "../data/slides"
 
 
 const Gallary = () => {
-    
-        const [index, setIndex] = React.useState(-1);
 
-    // const [open, setOpen] = React.useState(false);
+  const [index, setIndex] = React.useState(-1);
+  const { data: imgInfo = [], isLoading } = useQuery({
+    queryKey: ['img-file'],
+    queryFn: async () => {
+      const res = await fetch(`http://localhost:5000/img-file`);
+      const data = await res.json();
+      return data;
+    }
 
-    const slides = [
-        { src: require('./../../../assets/images/b1.jpg'), width: 800, height: 600 },
-        { src: require('./../../../assets/images/279368921_2582971368504743_8098821171039577904_n.jpg'), width: 1600, height: 900 },
-        { src: require('./../../../assets/images/outer-image.jpg'), width: 1600, height: 900 },
-        { src: require('./../../../assets/images/b4.jpg'), width: 1600, height: 900 },
-        { src: require('./../../../assets/images/b3.jpg'), width: 1600, height: 900 },
-        { src: require('./../../../assets/images/b2.jpg'), width: 1600, height: 900 }
-    ];
+  })
+  console.log(imgInfo);
+  let imgList = []
+  for (let i = 0; i < imgInfo.length; i++) {
+    imgList.push({ src: `http://localhost:5000/images/${imgInfo[i].ImgFile}`, width: 1600, height: 900 })
+  }
+  console.log(imgList);
 
-    return (
-        <div >
-         {/* <button type="button" onClick={() => setOpen(true)}>
-        Open Lightbox
-      </button> */}
+
+
+
+
+  return (
+    <div >
+
 
       <PhotoAlbum
         layout="columns"
-        photos={slides}
-        targetRowHeight={250}
+        photos={imgList}
         onClick={({ index }) => setIndex(index)}
       />
+      
 
-<Lightbox
+      <Lightbox
         open={index >= 0}
         index={index}
         close={() => setIndex(-1)}
-        slides={slides}
+        slides={imgList}
         plugins={[Captions, Fullscreen, Slideshow, Video, Zoom]}
       />
-      </div>
-    );
+    </div>
+  );
 };
 
 export default Gallary;

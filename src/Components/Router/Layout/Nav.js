@@ -42,7 +42,7 @@ console.log(depertments);
             <li className="hover-bordered"><Link to={'/appointment'}>Appointment</Link></li>
             <li tabIndex={0}>
             <span>Departments</span>
-            <ul className="bg-base-100">
+            <ul className="menu-compact bg-base-100">
 
               {depertments.map(depertment=><li id={depertment._id}><Link to={`/department/${depertment.depertmentURL}`}>{depertment.depertmentName}</Link></li>)}
               
@@ -66,7 +66,7 @@ console.log(depertments);
           <li className=' hover:text-green-500 mx-5 '><Link to={'/appointment'}>Appointment</Link></li>
           <li tabIndex={0}>
             <span>Departments</span>
-            <ul className="bg-base-100">
+            <ul className="menu-compact bg-base-100">
             {depertments.map(depertment=><li className='hover-bordered' id={depertment._id}><Link to={`/department/${depertment.depertmentURL}`}>{depertment.depertmentName}</Link></li>)}
             </ul>
           </li>
